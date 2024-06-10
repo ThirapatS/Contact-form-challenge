@@ -1,0 +1,250 @@
+@font-face {
+    font-family: karla;
+    src: url(../assets/fonts/Karla-VariableFont_wght.ttf);
+}
+
+:root {
+    --primary-color-lighter: hsl(148, 38%, 91%);
+    --primary-color-medium: hsl(169, 82%, 27%);
+    --primary-color-red: hsl(0, 66%, 54%);
+    --neutral-color-white: hsl(0, 0%, 100%);
+    --neutral-color-grey-medium: hsl(186, 15%, 59%);
+    --neutral-color-grey-darker: hsl(187, 24%, 22%);
+}
+
+/* reset css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: karla;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+
+    .center {   
+        position: absolute;        
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        background: var(--primary-color-lighter);
+        width: 90%;
+        height: 95%;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 3px 5px 10px #ccc;
+
+        .box {
+            background: var(--neutral-color-white);
+            /* width: 50%;
+            height: 60vh; */
+            padding: 30px;
+            border-radius: 10px;
+
+            .form-headerText {
+                font-weight: 700;
+                color: var(--neutral-color-grey-darker);
+            }
+            form {
+                .inputgroup {
+                    display: flex;
+                    width: 100%;
+                    gap: 20px;
+                }
+                label {
+                    font-size: 16px;
+                    font-weight: 400;
+
+                    b {
+                        color: var(--neutral-color-grey-medium);
+                    }
+                }
+                .inputBox {
+                    margin-top: 20px;
+                    input {
+                        margin-bottom: 5px;
+                        width: 100%;
+                        border: none;
+                        outline: 1px solid #000;
+                        padding: 15px 20px;
+                        font-size: 20px;
+                        border-radius: 5px;
+
+                    }
+                    input:focus {
+                        outline: 1px solid var(--primary-color-medium);
+                    }
+                }
+                .type {
+                    margin-top: 20px;
+                    label {
+                        font-size: 16px;
+                    }
+                    .checkgroup {
+                        margin-top: 10px;
+                        display: flex;
+                        gap: 20px;
+
+                        input[type="radio"]:checked + label {
+                            background: var(--primary-color-lighter);
+                            outline: 1px solid var(--primary-color-medium);
+                        }
+                        input[type="radio"]:checked + label span.radi:after {
+                            transform: translate(-50%, -50%) scale(1);
+                        }
+                        input[type="radio"] {
+                            display: none;
+                        }
+
+                        label {
+                            outline: 1px solid #000;
+                            padding: 15px 40px;
+                            width: 100%;
+                            border-radius: 5px;
+                            position: relative;
+                            text-align: center;
+                            cursor: pointer;
+                            
+                            span.radi {
+                                height: 20px;
+                                width: 20px;
+                                border-radius: 100%;
+                                border: 2px solid var(--neutral-color-grey-medium);
+                                display: block;
+                                position: absolute;
+                                left: 10%;
+                            }
+                            span.radi:after {
+                                content: "";
+                                height: 70%;
+                                width: 70%;
+                                background: var(--primary-color-medium);
+                                display: block;
+                                position: absolute;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%, -50%) scale(0);
+                                border-radius: 50%;
+                                transition: 300ms ease-in-out 0s;
+                            }
+                            span.text {
+                                font-size: 16px;
+                                font-weight: 700;
+                            }
+                        }
+                    }
+                }
+                .message {
+                    margin-top: 20px;
+                    label {
+                        font-size: 16px;
+                    }
+                    .inputText {
+                        margin-top: 10px;
+                        textarea {
+                            resize: none;
+                            width: 100%;
+                            height: 100px;
+                            padding: 5px;
+                            font-size: 16px;
+                            border-radius: 5px;
+                            outline: 1px solid #000;
+                            border: none;
+                        }
+                        textarea:focus {
+                            outline: 1px solid var(--primary-color-medium);
+                        }
+                    }
+                }
+                .submitCheck {
+                    margin-top: 50px;
+
+                    .check {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    input[type="checkbox"] {
+                        position: relative;
+                        width: 20px;
+                        height: 20px;
+                        background: none;
+                        border: 1px solid #ccc;
+                        appearance: none;
+                        cursor: pointer;
+                        margin-right: 30px;
+                        border-radius: 2px;
+                    }
+                    input[type="checkbox"]::before {
+                        content: "";
+                        position: absolute;
+                        top: 1px;
+                        left: 40%;
+                        width: 3px;
+                        height: 10px;
+                        border: 3px solid transparent;
+                        border-left: none;
+                        border-top: none;
+                        transform: rotate(45deg) scale(1);
+                    }
+                    input[type="checkbox"]:checked {
+                        background: var(--primary-color-medium);
+                    }                    
+                    input[type="checkbox"]:checked:before {
+                        border-color: #fff;
+                    }
+                }
+                button {
+                    margin-top: 30px;
+                    width: 100%;
+                    padding: 14px 15px;
+                    font-size: 16px;
+                    font-weight: 700;
+                    border: none;
+                    background: var(--primary-color-medium);
+                    color: #fff;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+                button:hover {
+                    background: hsl(169, 89%, 15%);
+                }
+            }
+        }
+        .err {
+            color: var(--primary-color-red);
+        }
+    }
+}
+.successSubmitWindow {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: var(--neutral-color-grey-darker);
+    padding: 20px;
+    border-radius: 10px;
+    transition: 1s;
+    strong {
+        color: #fff;
+        font-size: 20px;
+    }
+    span {
+        color: #fff;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .container .center .box form .inputgroup {
+        flex-direction: column;
+        gap: 0;
+    }
+    .container .center .box form .checkgroup {
+        flex-direction: column;
+    }
+}

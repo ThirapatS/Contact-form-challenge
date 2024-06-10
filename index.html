@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <!-- css -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- box icon -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <title>Frontend Mentor | Contact form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <div class="center">
+      <div class="box">
+        <h1 class="form-headerText"><strong>Contact Us</strong></h1>
+        <form action="" id="form">
+          <div class="inputgroup">
+            <div class="inputBox">
+              <label for="firstname">First Name <b>*</b></label><br>
+              <input type="text" id="firstname" name="firstname"><br>
+              <span class="err"></span>
+            </div>
+            <div class="inputBox">
+              <label for="lastname">Last Name <b>*</b></label><br>
+              <input type="text" id="lastname" name="lastname"><br>
+              <span class="err"></span>
+            </div>
+          </div>
+          <div class="inputBox">
+            <label for="email">Email Address <b>*</b></label><br>
+            <input type="email" id="email" name="email"><br>
+            <span class="err"></span>
+          </div>
+          <div class="type">
+            <label for="">Query Type <b>*</b></label><br>
+            <div class="checkgroup">
+              <input type="radio" name="queryType" id="enquiry" value="Enquiry">
+              <label for="enquiry">
+                <span class="radi"></span>
+                <span class="text">General Enquiry</span>
+              </label>
+              <input type="radio" name="queryType" id="request" value="Request">
+              <label for="request">
+                <span class="radi"></span>
+                <span class="text">Support Request</span>
+              </label>
+            </div><br>
+            <span class="err"></span>
+          </div>
+          <div class="message">
+            <label for="message">Message <b>*</b></label><br>
+            <div class="inputText">
+              <textarea name="message" id="message"></textarea>
+              <span class="err"></span>
+            </div>
+          </div>
+          <div class="submitCheck">
+            <div class="check">
+              <input type="checkbox" name="consent" id="consent" value="consent">
+              <label for="consent">
+                I consent to being contacted by the team <b>*</b>
+              </label><br><br>
+            </div>
+            <span class="err"></span>
+          </div>
+          <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+      Coded by <a href="#">TIPTON</a>.
+    </div>
+  </div>
+  <div class="successSubmitWindow" id="successWindow">
+    <strong><i class='bx bx-check-circle'></i> Message Sent!</strong><br>
+    <span>Thanks for complating the form, We'll be in touch soon!</span>
+  </div>
+</body>
+  <script src="js/validate.js"></script>
+</html>
